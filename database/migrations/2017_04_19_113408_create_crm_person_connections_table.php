@@ -18,10 +18,10 @@ class CreateCrmPersonConnectionsTable extends Migration {
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->text('description', 65535);
 			$table->string('project_id', 36)->index('fk_lar1_responsible_person_lar1_projects1_idx');
 			$table->string('person_id', 36)->index('fk_lar1_responsible_person_lar1_persons1_idx');
 			$table->string('person_type_id', 36)->index('fk_lar1_responsible_person_lar1_person_types1_idx');
+			$table->text('description', 65535);
 		});
 	}
 

@@ -19,8 +19,8 @@ class CreateCrmProjectLoginTypesTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name')->nullable();
-			$table->text('description', 65535)->nullable();
 			$table->string('login_id', 36)->index('fk_lar1_login_types_lar1_logins1_idx');
+			$table->text('description', 65535)->nullable();
 		});
 	}
 
