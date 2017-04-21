@@ -2,12 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class CRMProjectLoginTypes extends Model
+class CRMProjectLoginTypes extends CRMCoreModel
 {
-    use SoftDeletes;
     /**
      * the database table used by model.
      */
@@ -19,4 +15,5 @@ class CRMProjectLoginTypes extends Model
     protected $fillable = [
         'id', 'login_id', 'description',
     ];
+
 }

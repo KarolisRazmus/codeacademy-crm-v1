@@ -2,12 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class CRMPersons extends Model
+class CRMPersons extends CRMCoreModel
 {
-    use SoftDeletes;
     /**
      * Table name
      *

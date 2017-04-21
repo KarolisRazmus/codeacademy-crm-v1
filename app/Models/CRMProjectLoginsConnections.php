@@ -2,12 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class CRMProjectLoginsConnections extends Model
+class CRMProjectLoginsConnections extends CRMCoreModel
 {
-    use SoftDeletes;
     /**
      * the database table used by model.
      */
