@@ -11,21 +11,8 @@
 |
 */
 
-use App\Models\CRMPersons;
+Route::get('/persons',[
+    'uses' => 'CRMPersonsController@index'
 
-Route::get('/', function () {
+]);
 
-    return CRMPersons::get();
-
-});
-
-Route::get('/new-person', function () {
-
-    return CRMPersons::create([
-        'id' => Ramsey\Uuid\Uuid::uuid4(),
-        'name' => 'Karolis',
-        'email' =>'karolis@gmail.com',
-        'phone' => '861855444'
-    ]);
-
-});
