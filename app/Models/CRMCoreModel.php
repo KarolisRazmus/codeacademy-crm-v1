@@ -16,5 +16,26 @@ class CRMCoreModel extends Model
 {
     use SoftDeletes;
 
+    public $incrementing = false;
+
+//    protected static function boot()
+//    {
+//        parent::boot();
+//
+//    static::creating(function ($model) {
+//        $model->{$model->getKeyName()} = (string)$model->generateNewId();
+//    });
+//
+//    public function generateNewId()
+//    {
+//        if (isset($this->attributes['id'])) {
+//            return $this->attributes['id'];
+//        }
+//        return uuid4();
+//    }
+//    }
+
+    //    public $table->primary('count');
+
 }
 
