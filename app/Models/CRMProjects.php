@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Models\CRMProjects;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CRMProjects extends Model
 {
+    use SoftDeletes;
     /**
      * the database table used by model.
      */

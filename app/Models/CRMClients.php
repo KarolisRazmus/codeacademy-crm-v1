@@ -1,20 +1,22 @@
 <?php
 
-namespace App\Models\CRMProjectTypes;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CRMProjectTypes extends Model
+class CRMClients extends Model
 {
+    use SoftDeletes;
     /**
      * the database table used by model.
      */
-    protected $table = 'crm_project_types';
+    protected $table = 'crm_clients';
 
     /**
      * the attributes that are mass assignable.
      */
     protected $fillable = [
-        'id', 'name', 'description',
+        'id', 'name',
     ];
 }
