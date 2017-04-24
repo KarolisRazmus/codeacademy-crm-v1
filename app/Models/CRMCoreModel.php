@@ -34,8 +34,8 @@ class CRMCoreModel extends Model
 //        return uuid4();
 //    }
 //    }
-
-    //    public $table->primary('count');
+//
+//        public $table->primary('count');
 
 }
 
