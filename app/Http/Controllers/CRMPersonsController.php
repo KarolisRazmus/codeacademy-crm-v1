@@ -13,9 +13,11 @@ class CRMPersonsController extends Controller {
 	 */
 	public function index()
 	{
-		CRMPersons::get();
+//      return CRMPersons::get();
 
-		return ->simplePaginate(15);
+//      return CRMPersons::paginate(2);
+
+//      return CRMPersons::orderBy('created_at','dsc')->get();
 
 	}
 
@@ -89,23 +91,5 @@ class CRMPersonsController extends Controller {
 		//
 	}
 
-//    public function showPersons(int $count = 1)
-//    {
-//        $faker = Factory::create();
-//        $data = [];
-//
-//        for ($i = 0; $i < $count; $i++) {
-//
-//            $data[] = [
-//                'id' => $faker->uuid,
-//                'name' => $faker->name,
-//                'email' => $faker->email,
-//                'phone' => $faker->phoneNumber
-//            ];
-//
-//        }
-//        CRMPersons::insert($data);
-//
-//    }
 
 }
