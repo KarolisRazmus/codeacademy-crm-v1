@@ -12,30 +12,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class CRMCoreModel extends Model
 {
     use SoftDeletes;
 
     public $incrementing = false;
 
-//    protected static function boot()
-//    {
-//        parent::boot();
-//
-//    static::creating(function ($model) {
-//        $model->{$model->getKeyName()} = (string)$model->generateNewId();
-//    });
-//
-//    public function generateNewId()
-//    {
-//        if (isset($this->attributes['id'])) {
-//            return $this->attributes['id'];
-//        }
-//        return uuid4();
-//    }
-//    }
-//
-//        public $table->primary('count');
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->{$model->getKeyName()} = (string) $model->generateNewId();
+        });
+    }
+
+    public function generateNewId()
+    {
+        if (isset($this->attributes['id'])) {
+            return $this->attributes['id'];
+        }
+
+        return Uuid::uuid4();
+    }
 
 }
 

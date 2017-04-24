@@ -19,6 +19,7 @@ class CreateCrmClientsTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name');
+			//$table->enum('client_type', array('J', 'F'));
 		});
 	}
 

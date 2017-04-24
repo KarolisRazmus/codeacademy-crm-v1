@@ -13,7 +13,7 @@ class CRMProjectLoginTypes extends CRMCoreModel
      * the attributes that are mass assignable.
      */
     protected $fillable = [
-        'id', 'login_id', 'description',
+        'id', 'login_id', 'name', 'description',
     ];
 
 }
