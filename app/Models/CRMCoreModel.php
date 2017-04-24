@@ -17,24 +17,30 @@ class CRMCoreModel extends Model
 {
     use SoftDeletes;
 
+    /**
+     * @var bool
+     */
     public $incrementing = false;
 
-    protected static function boot()
+    /**
+     *  generate varchar random id, when there is no id
+     */
+    protected static function boot ()
     {
-        parent::boot();
+        parent::boot ();
 
-        static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) $model->generateNewId();
-        });
+        static::creating ( function ( $model ) {
+            $model->{$model->getKeyName ()} = (string) $model->generateNewId ();
+        } );
     }
 
-    public function generateNewId()
+    public function generateNewId ()
     {
-        if (isset($this->attributes['id'])) {
-            return $this->attributes['id'];
+        if ( isset( $this->attributes[ 'id' ] ) ) {
+            return $this->attributes[ 'id' ];
         }
 
-        return Uuid::uuid4();
+        return Uuid::uuid4 ();
     }
 
 }

@@ -13,6 +13,6 @@ class CRMClientConnections extends CRMCoreModel
      * the attributes that are mass assignable.
      */
     protected $fillable = [
-        'id', 'client_id', 'person_id', 'contact_type_id', 'description',
+        'id' , 'client_id' , 'person_id' , 'contact_type_id' , 'description' ,
     ];
 }

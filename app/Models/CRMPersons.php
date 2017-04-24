@@ -5,14 +5,13 @@ namespace App\Models;
 class CRMPersons extends CRMCoreModel
 {
     /**
-     * Table name
-     *
-     * @var string
+     * the database table used by model.
      */
+
     protected $table = 'crm_persons';
 
     /**
-     * @var array
+     * the attributes that are mass assignable.
      */
 
     protected $fillable = ['id','name','email','phone'];
