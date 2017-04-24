@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CRMClients;
 use App\Models\CRMPersons;
 use Illuminate\Http\Request;
 use Faker\Factory;
@@ -19,6 +20,18 @@ class CRMFakeDataController extends Controller
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'phone' => $faker->phoneNumber
+            ]);
+        }
+    }
+
+    public function generateClients(int $count = 1)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            CRMClients::create([
+                'id' => $faker->uuid,
+                'name' => $faker->name
             ]);
         }
     }
