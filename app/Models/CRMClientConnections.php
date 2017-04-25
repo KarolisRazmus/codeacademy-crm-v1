@@ -3,22 +3,31 @@
 namespace App\Models;
 
 class CRMClientConnections extends CRMCoreModel
-{
-    /**
-     * the database table used by model.
-     */
-    protected $table = 'crm_client_connections';
+    {
+        /**
+         * the database table used by model.
+         */
+        protected $table = 'crm_client_connections';
 
-    /**
-     * the attributes that are mass assignable.
-     */
-    protected $fillable = [
-        'id', 'client_id', 'person_id', 'contact_type_id', 'description',
+        /**
+         * the attributes that are mass assignable.
+         */
+        protected $fillable = [
+        'id' , 'client_id' , 'person_id' , 'contact_type_id' , 'description' ,
     ];
 
-
-    public function people (  )
+        public function clientIdData (  )
     {
-        return $this->hasMany(CRMPersons::class, 'id', 'person_id');
+        return $this->hasOne(CRMClients::class, 'id', 'client_id');
     }
-}
+
+        public function personIdData (  )
+    {
+        return $this->hasOne(CRMPersons::class, 'id', 'person_id');
+    }
+
+        public function ContactTypeData (  )
+    {
+        return $this->hasOne(CRMClientConnectionsTypes::class, 'id', 'contact_type_id');
+    }
+    }
