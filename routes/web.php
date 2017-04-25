@@ -132,26 +132,62 @@ Route::group(['prefix' => '/generate-fake-data'], function () {
 });
 
 
-Route::group(['prefix' => 'gyvunu_prieglauda'], function () {
 
-    Route::get('/', function ()    {
-        echo 'Welcome to Gyvunu prieglauda';
+
+Route::group(['prefix' => 'gyvunu-prieglauda'], function () {
+
+    Route::get('/gyvunai/{id}', function ($id) {
+
+            echo 'Welcome to gyvunai!</br></br>';
+            switch ($id) {
+                case 1:
+                    echo "kiaule";
+                    break;
+                case 2:
+                    echo "voras";
+                    break;
+                case 3:
+                    echo "karve";
+                    break;
+            }
+        });
     });
 
-    Route::get('/gyvunai', function ()    {
-        echo 'Welcome to GYVUNAI!';
+    Route::group(['prefix' => '/gyvunai/{id}'], function () {
+
+        Route::get('/', function ($id)    {
+            echo 'Welcome to zuvys!</br></br>';
+            switch ($id) {
+                case 1:
+                    echo "karpis";
+                    break;
+                case 2:
+                    echo "karosas";
+                    break;
+                case 3:
+                    echo "lynas";
+                    break;
+            }
+        });
     });
 
-    Route::get('/zuvys', function ()    {
-        echo 'Welcome to ZUVYS!';
+    Route::group(['prefix' => '/gyvunai/{id}'], function () {
+
+        Route::get('/', function ($id)    {
+            echo 'Welcome to pauksciai!</br></br>';
+            switch ($id) {
+                case 1:
+                    echo "vista";
+                    break;
+                case 2:
+                    echo "papuga";
+                    break;
+                case 3:
+                    echo "genys";
+                    break;
+            }
+        });
     });
-
-    Route::get('/pauksciai', function ()    {
-        echo 'Welcome to PAUKSCIAI!';
-    });
-
-
-});
 
 
 
