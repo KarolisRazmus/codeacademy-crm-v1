@@ -16,4 +16,5 @@ class CRMPersonConnections extends CRMCoreModel
     protected $fillable = [
         'id', 'project_id', 'person_id', 'person_type_id', 'description',
     ];
+
 }

@@ -15,4 +15,10 @@ class CRMClientConnections extends CRMCoreModel
     protected $fillable = [
         'id', 'client_id', 'person_id', 'contact_type_id', 'description',
     ];
+
+
+    public function people (  )
+    {
+        return $this->hasMany(CRMPersons::class, 'id', 'person_id');
+    }
 }

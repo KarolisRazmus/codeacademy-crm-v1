@@ -36,8 +36,6 @@ class CRMProjectsController extends Controller {
 
         //(CRMClients::pluck('id')->toArray()));
 
-
-
 	}
 
 	/**
