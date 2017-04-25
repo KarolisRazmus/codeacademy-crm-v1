@@ -13,7 +13,13 @@ class CRMPersonsController extends Controller {
 	 */
 	public function index()
 	{
-        return CRMPersons::get();
+        $persons = CRMPersons::all();
+
+        foreach($persons as $person)
+        {
+            echo $person->name."</br>";
+        }
+
 
 //      return CRMPersons::paginate(2);
 

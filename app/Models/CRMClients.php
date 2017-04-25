@@ -20,16 +20,25 @@ class CRMClients extends CRMCoreModel
 
 //    protected $with = ['projects', 'responsible_person'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function projects (  )
     {
         return $this->hasMany(CRMProjects::class, 'client_id', 'id');
     }
 
+    /**
+     * @return mixed
+     */
     public function responsible_person (  )
     {
-        return $this->hasMany(CRMClientConnections::class, 'client_id', 'id')->with('people');
+        return $this->hasMany(CRMClientConnections::class, 'client_id', 'id')->with('personIdClientConnectionsData');
     }
 
+    /**
+     * @return bool
+     */
     public function getIsCompanyAttribute (  )
     {
         return $this->client_type == 'J';

@@ -14,7 +14,7 @@
 use App\Models\CRMClientConnections;
 
 Route::get('/', function(){
-    return CRMClientConnections::with(['clientIdData', 'personIdData', 'ContactTypeData'])->get();
+    return CRMClientConnections::with(['clientId_ClientConnections', 'personId_ClientConnections', 'ContactType_ClientConnections'])->get();
    //return view ('welcome');
 });
 
@@ -111,7 +111,7 @@ Route::group(['prefix' => '/generate-fake-data'], function () {
 
     Route::group(['prefix' => '/projects'], function () {
 
-        Route::get('/types{count?}',[
+        Route::get('/types/{count?}',[
             'uses' => 'CRMFakeDataController@generateProjectTypes',
         ]);
 
