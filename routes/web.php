@@ -11,8 +11,11 @@
 |
 */
 
+use App\Models\CRMClientConnections;
+
 Route::get('/', function(){
-   return view ('welcome');
+    return CRMClientConnections::with(['clientIdData', 'personIdData', 'ContactTypeData'])->get();
+   //return view ('welcome');
 });
 
 Route::group(['prefix' => '/persons'], function () {

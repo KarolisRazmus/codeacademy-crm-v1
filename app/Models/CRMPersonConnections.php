@@ -17,4 +17,6 @@ class CRMPersonConnections extends CRMCoreModel
         'id', 'project_id', 'person_id', 'person_type_id', 'description',
     ];
 
+    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
+
 }

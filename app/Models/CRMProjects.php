@@ -15,4 +15,6 @@ class CRMProjects extends CRMCoreModel
     protected $fillable = [
         'id', 'client_id', 'project_type_id', 'name', 'description',
     ];
+
+    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
 }

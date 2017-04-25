@@ -15,4 +15,6 @@ class CRMPersonTypes extends CRMCoreModel
     protected $fillable = [
         'id', 'name', 'description',
     ];
+
+    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
 }
