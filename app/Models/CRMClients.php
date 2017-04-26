@@ -16,8 +16,6 @@ class CRMClients extends CRMCoreModel
 
     protected $appends = ['is_company'];
 
-    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
-
 //    protected $with = ['projects', 'responsible_person'];
 
     /**
@@ -33,7 +31,7 @@ class CRMClients extends CRMCoreModel
      */
     public function responsible_person (  )
     {
-        return $this->hasMany(CRMClientConnections::class, 'client_id', 'id')->with('personIdClientConnectionsData');
+        return $this->hasMany(CRMClientConnections::class, 'client_id', 'id')->with('personId_ClientConnections');
     }
 
     /**

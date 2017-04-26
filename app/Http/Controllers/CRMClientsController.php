@@ -13,14 +13,14 @@ class CRMClientsController extends Controller {
 	 */
 	public function index()
 	{
-	    //return CRMClients::with(['projects', 'responsible_person'])->get();
+        $configuration = [];
 
-//        $configuration = [
-//            'example' => 'data data data',
-//            'client' => CRMClients::with(['projects', 'responsible_person'])->get()
-//        ];
-//
-//        return view('data', $configuration);
+        $configuration['clients'] = CRMClients::with(['projects'])->get();
+        $configuration['totalCount'] = sizeOf($configuration['clients']);
+
+        //return $configuration['clients'];
+
+        return view('content.clients', $configuration);
 
 	}
 

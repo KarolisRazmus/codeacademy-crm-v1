@@ -14,8 +14,8 @@
 use App\Models\CRMClientConnections;
 
 Route::get('/', function(){
-    return CRMClientConnections::with(['clientId_ClientConnections', 'personId_ClientConnections', 'ContactType_ClientConnections'])->get();
-   //return view ('welcome');
+    //return CRMClientConnections::with(['clientId_ClientConnections', 'personId_ClientConnections', 'ContactType_ClientConnections'])->get();
+   return view ('main');
 });
 
 Route::group(['prefix' => '/persons'], function () {

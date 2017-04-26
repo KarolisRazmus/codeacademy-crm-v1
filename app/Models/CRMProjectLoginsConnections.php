@@ -16,8 +16,6 @@ class CRMProjectLoginsConnections extends CRMCoreModel
         'id', 'project_id', 'logins_id',
     ];
 
-    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

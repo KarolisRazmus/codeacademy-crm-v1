@@ -22,6 +22,8 @@ class CRMCoreModel extends Model
      */
     public $incrementing = false;
 
+    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at'];
+
     /**
      *  creates unique varchar id in table when there is none
      */

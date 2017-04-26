@@ -16,12 +16,11 @@ class CRMProjects extends CRMCoreModel
         'id', 'client_id', 'project_type_id', 'name', 'description',
     ];
 
-    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function clientId_Projects ()
+    public function client ()
     {
         return $this->hasOne(CRMClients::class, 'id', 'client_id');
     }
@@ -29,8 +28,13 @@ class CRMProjects extends CRMCoreModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function projectTypeId_Projects (  )
+    public function type (  )
     {
         return $this->hasOne(CRMProjectTypes::class, 'id', 'project_type_id');
+    }
+
+    public function totalPersons ()
+    {
+        return $this->hasMany(CRMPersonConnections::class, 'project_id', 'id');
     }
 }

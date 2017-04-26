@@ -16,5 +16,4 @@ class CRMProjectTypes extends CRMCoreModel
         'id', 'name', 'description',
     ];
 
-    protected $hidden = [ 'count' , 'created_at' , 'updated_at' , 'deleted_at' ];
 }
