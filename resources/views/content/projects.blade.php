@@ -5,30 +5,24 @@
 
 @section('content')
 
-    <table>
+    <div class="container">
+    <table class="table-bordered">
     <tr>
-        <th>Project</th>
-        <th>Client</th>
-        <th>Persons</th>
+        <th class="col-md-2">Project</th>
+        <th class="col-md-2">Client</th>
+        <th class="col-md-2">Persons</th>
     </tr>
 
-
         @foreach($projects as $project)
-            <tr><td>{{$project['name']}}</td></tr>
+            <tr>
+                <td class="col-md-2">{{$project['name']}}</td>
+                <td class="col-md-2">{{$project['client']['name']}}</td>
+                <td class="col-md-2">{{sizeof($project['total_persons'])}}</td>
+            </tr>
         @endforeach
 
-
-        @foreach($project['client'] as $client)
-                <td>{{$client['name']}}</td>
-            @endforeach
-
-
-            @foreach($project['total_persons'] as $persons)
-                <td>{{sizeOf($persons)}}</td>
-            @endforeach
-
-    
     </table>
+    </div>
 
 @endsection
 

@@ -33,6 +33,9 @@ class CRMProjects extends CRMCoreModel
         return $this->hasOne(CRMProjectTypes::class, 'id', 'project_type_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function totalPersons ()
     {
         return $this->hasMany(CRMPersonConnections::class, 'project_id', 'id');
