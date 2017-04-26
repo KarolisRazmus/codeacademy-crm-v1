@@ -16,4 +16,9 @@ class CRMProjectLogins extends CRMCoreModel
         'id', 'user', 'password', 'login_url',
     ];
 
+    public function type (  )
+    {
+        return $this->hasOne(CRMProjectLoginTypes::class, 'login_id', 'id');
+    }
+
 }

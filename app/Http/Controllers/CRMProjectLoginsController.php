@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\CRMProjectLogins;
+use App\Models\CRMProjects;
 use Illuminate\Routing\Controller;
 
 class CRMProjectLoginsController extends Controller {
@@ -13,7 +14,15 @@ class CRMProjectLoginsController extends Controller {
 	 */
 	public function index()
 	{
-		return CRMProjectLogins::get();
+        //return CRMProjectLogins::get();
+
+		$configuration = [];
+
+		$configuration['projects'] = CRMProjects::with(['login_connections'])->get()->toArray();
+
+		//return view('content.logins', $configuration);
+
+		dd($configuration);
 	}
 
 	/**

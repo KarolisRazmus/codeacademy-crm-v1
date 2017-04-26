@@ -22,7 +22,7 @@ class CRMProjectsController extends Controller {
 
         $configuration['totalCount'] = sizeOf($configuration['projects']);
 
-        //dd($configuration);
+        dd($configuration);
 
         return view('content.projects', $configuration);
 

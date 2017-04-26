@@ -40,4 +40,9 @@ class CRMProjects extends CRMCoreModel
     {
         return $this->hasMany(CRMPersonConnections::class, 'project_id', 'id');
     }
+
+    public function login_connections (  )
+    {
+        return $this->hasMany(CRMProjectLoginsConnections::class, 'project_id', 'id')->with(['logins'])->with(['type']);
+    }
 }

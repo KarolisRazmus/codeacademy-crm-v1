@@ -2,6 +2,7 @@
 
 return [
     'projects' => 'Projektai',
-    'clients' => 'Klientai'
+    'clients' => 'Klientai',
+    'logins' => 'Prisijungimai',
 ];
 
