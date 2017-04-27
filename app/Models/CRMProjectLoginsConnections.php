@@ -34,7 +34,7 @@ class CRMProjectLoginsConnections extends CRMCoreModel
 
     public function logins (  )
     {
-        return $this->hasOne(CRMProjectLogins::class, 'id', 'logins_id');
+        return $this->hasOne(CRMProjectLogins::class, 'id', 'logins_id')->with(['type']);
     }
 
 }
